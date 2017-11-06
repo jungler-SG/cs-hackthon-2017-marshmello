@@ -47,9 +47,7 @@ public class MarshMellowService {
     private List<ElasticAudio> mockResult() {
         try {
             return Files.list(Paths.get(batchProperties.getVoiceLogOutput()))
-                    .peek(f -> log.info("Path :" + f.getFileName() + ", " + f.getFileName().toString().endsWith(".json")))
                     .filter(f -> f.getFileName().toString().endsWith(".json"))
-                    .peek(f -> log.info("After filter :" + f.getFileName()))
                     .map(this::convertToElasticAudio)
                     .collect(Collectors.toList());
         } catch (IOException ex) {
@@ -59,13 +57,26 @@ public class MarshMellowService {
 
     private ElasticAudio convertToElasticAudio(Path path) {
         return new ElasticAudio(
-                FilenameUtils.getName(path.toString()),
-                FilenameUtils.getName(path.toString()) + ".wav",
+                FilenameUtils.getBaseName(path.toString()),
+                findAudioFileName(path).getFileName().toString(),
                 LocalTime.now().toString(),
                 "RMID1",
                 "clientId1",
                 "this is full text of the speech from mock search",
                 List.of(new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"})
         );
+    }
+
+    private Path findAudioFileName(Path jsonFileName) {
+        String baseName = FilenameUtils.getBaseName(jsonFileName.toString());
+        try {
+            return Files.list(Paths.get(batchProperties.getVoiceLogOutput()))
+                    .filter(f -> f.getFileName().toString().contains(baseName))
+                    .filter(f -> !f.getFileName().toString().endsWith(".json"))
+                    .findFirst()
+                    .orElse(jsonFileName);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }

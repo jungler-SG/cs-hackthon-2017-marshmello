@@ -34,9 +34,9 @@ public class MarshMellowApi {
 
     }
 
-    @GetMapping("/api/search/{keywords}")
+    @GetMapping("/api/search/{keyWords}")
     @ResponseBody
-    public List<ElasticAudio> searchFor(String keyWords) {
+    public List<ElasticAudio> searchFor(@PathVariable("keyWords") String keyWords) {
         return service.searchFor(keyWords);
     }
 }
