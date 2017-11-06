@@ -28,7 +28,7 @@ public class WaveformGenerator {
 
         try {
             if (executeWaveformGenerator(inputVoiceFile, jsonOutputFile)) {
-                return String.valueOf(Files.readAllBytes(jsonOutputFile));
+                return new String(Files.readAllBytes(jsonOutputFile));
             }
         } catch (IOException ex) {
             log.error("Error while generating waveform for {}.", inputVoiceFile, ex);
@@ -53,12 +53,13 @@ public class WaveformGenerator {
                         "8"
                 };
 
+        File tempLogFile = null;
         try {
             ProcessBuilder procBuilder = new ProcessBuilder(waveformCmd);
-            procBuilder.directory(inputVoiceFile.toFile());
-            File tempLogFile =
+            procBuilder.directory(new File(batchProperties.getVoiceLogInput()));
+            tempLogFile =
                     Files.createTempFile(
-                            Paths.get(batchProperties.getVoiceLogOutput()),
+                            Paths.get(batchProperties.getVoiceLogTmp()),
                             "waveform",
                             "log",
                             new FileAttribute[]{}).toFile();
@@ -79,6 +80,8 @@ public class WaveformGenerator {
         } catch (IOException | InterruptedException ex) {
             log.error("Error while running 'ffmpeg' process.", ex);
             return false;
+        } finally {
+            deleteIfExists(tempLogFile.toPath());
         }
         return true;
     }

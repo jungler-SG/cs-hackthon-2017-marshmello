@@ -94,7 +94,7 @@ public class SphinxSpeech2TextEngine implements Speech2TextEngine {
             log.error("Error while running 'ffmpeg' process.", ex);
         } finally {
             if (tempLogFile != null) {
-
+                deleteIfExists(tempLogFile.toPath());
             }
         }
 
