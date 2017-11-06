@@ -14,6 +14,7 @@
     min-height: 195px;
     background: url("../../assets/images/bg-voice-log.png") no-repeat;
     background-size: cover;
+    background-position: 10%;
 }
 
 .search-input {
