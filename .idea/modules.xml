@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/marshmellow.iml" filepath="$PROJECT_DIR$/marshmellow.iml" />
-      <module fileurl="file://$PROJECT_DIR$/marshmellow-app/marshmellow (1).iml" filepath="$PROJECT_DIR$/marshmellow-app/marshmellow (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/marshmellow-app/marshmellow-app.iml" filepath="$PROJECT_DIR$/marshmellow-app/marshmellow-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/marshmellow-elastic/marshmellow-elastic.iml" filepath="$PROJECT_DIR$/marshmellow-elastic/marshmellow-elastic.iml" />
       <module fileurl="file://$PROJECT_DIR$/marshmellow-ui/marshmellow-ui.iml" filepath="$PROJECT_DIR$/marshmellow-ui/marshmellow-ui.iml" />
     </modules>

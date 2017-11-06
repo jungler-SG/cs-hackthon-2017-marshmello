@@ -6,6 +6,10 @@
 
     <groupId>com.cs.hackathon2017</groupId>
     <artifactId>marshmellow-elastic</artifactId>
-    <version>1.0-SNAPSHOT</version>
 
+    <parent>
+        <groupId>com.cs.hackathon2017</groupId>
+        <artifactId>marshmellow</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 </project>

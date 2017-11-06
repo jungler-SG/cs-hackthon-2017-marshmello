@@ -1,4 +1,4 @@
 batch:
-  voiceLogInput:<input-folder>
-  voiceLogOutput:<output-folder>
-  voiceLogTmp:<tmp-folder>
+  voice-log-input: input-folder
+  voice-log-output: output-folder
+  voice-log-tmp: tmp-folder
