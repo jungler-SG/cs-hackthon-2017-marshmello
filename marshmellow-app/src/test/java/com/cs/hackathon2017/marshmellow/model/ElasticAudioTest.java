@@ -1,12 +1,6 @@
 package com.cs.hackathon2017.marshmellow.model;
 
-import org.junit.Test;
-
-import java.util.List;
-
 //import static java.util.List.of;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
 
 public class ElasticAudioTest {
 
