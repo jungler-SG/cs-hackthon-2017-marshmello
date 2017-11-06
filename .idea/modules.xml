@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/marshmellow.iml" filepath="$PROJECT_DIR$/marshmellow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marshmellow-app/marshmellow-app.iml" filepath="$PROJECT_DIR$/marshmellow-app/marshmellow-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marshmellow-elastic/marshmellow-elastic.iml" filepath="$PROJECT_DIR$/marshmellow-elastic/marshmellow-elastic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/marshmellow-ui/marshmellow-ui.iml" filepath="$PROJECT_DIR$/marshmellow-ui/marshmellow-ui.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+batch:
+  voice-log-input: /Users/raj/Hackathon2017/data/input
+  voice-log-output: /Users/raj/Hackathon2017/data/output
+  voice-log-tmp: /Users/raj/Hackathon2017/data/tmp
+
+sphinx:
+  ffmpeg-binary-path: /Users/raj/Hackathon2017/ffmpeg
+
+waveform:
+  waveform-binary-path: /usr/local/bin/audiowaveform

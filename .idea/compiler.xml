@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="marshmellow-app" />
+        <module name="marshmellow-elastic" />
+        <module name="marshmellow-ui" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="marshmellow" target="1.8" />
+      <module name="marshmellow-app" target="9" />
+      <module name="marshmellow-elastic" target="1.8" />
+      <module name="marshmellow-ui" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
