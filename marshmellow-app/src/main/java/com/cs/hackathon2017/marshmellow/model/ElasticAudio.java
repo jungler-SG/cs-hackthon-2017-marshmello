@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.util.List;
@@ -24,7 +23,6 @@ public class ElasticAudio {
     private String rmId;
     private String clientId;
     private String fullText;
-
     private List<String[]> keywordTimes;
 
 }
