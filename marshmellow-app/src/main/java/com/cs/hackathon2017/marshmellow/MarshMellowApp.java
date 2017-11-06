@@ -13,8 +13,5 @@ public class MarshMellowApp {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(MarshMellowApp.class);
-
-        MarshMellowBatchProperties props = ctx.getBean(MarshMellowBatchProperties.class);
-        log.info("Input {}, output {}", props.getVoiceLogInput(), props.getVoiceLogOutput());
     }
 }
