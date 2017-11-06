@@ -1,0 +1,4 @@
+batch:
+  voiceLogInput:<input-folder>
+  voiceLogOutput:<output-folder>
+  voiceLogTmp:<tmp-folder>
