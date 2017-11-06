@@ -65,7 +65,6 @@ public class MarshMellowService {
                 "clientId1",
                 "this is full text of the speech from mock search",
                 Arrays.asList(new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"})
-
         );
     }
 
