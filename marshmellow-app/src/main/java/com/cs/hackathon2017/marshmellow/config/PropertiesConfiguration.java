@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 
 @Configuration
 @EnableConfigurationProperties({
+        ElasticSearchProperties.class,
         MarshMellowBatchProperties.class,
         SphinxProperties.class,
         WaveformProperties.class

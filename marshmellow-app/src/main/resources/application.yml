@@ -1,10 +1,18 @@
 batch:
-  voice-log-input: /Users/raj/Hackathon2017/data/input
-  voice-log-output: /Users/raj/Hackathon2017/data/output
-  voice-log-tmp: /Users/raj/Hackathon2017/data/tmp
+  voice-log-input: /tmp
+  voice-log-output: /tmp
+  voice-log-tmp: /tmp
 
 sphinx:
+<<<<<<< HEAD
+  ffmpeg-path: /usr/local/bin/ffmpeg
+
+elasticsearch:
+  elastic-version: 5.5
+  domain-arn: arn:aws:es:ap-southeast-1:744922890941:domain/cs-hackthon-marshmello
+=======
   ffmpeg-binary-path: /Users/raj/Hackathon2017/ffmpeg
 
 waveform:
   waveform-binary-path: /usr/local/bin/audiowaveform
+>>>>>>> 00b5a8c165cae6e34c39b2ed7fe78d5727956efb
