@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VoiceLogListComponent } from './voice-log-list/voice-log-list.component';
 import { VoiceLogComponent } from './voice-log/voice-log.component';
+import { MessageService } from './message.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { VoiceLogComponent } from './voice-log/voice-log.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
