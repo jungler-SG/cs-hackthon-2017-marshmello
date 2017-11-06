@@ -27,37 +27,35 @@ public class SphinxSpeech2TextEngine implements Speech2TextEngine {
     SphinxProperties sphinxProperties;
     SphinxEngine sphinxEngine;
 
-    public void process(Path inputVoiceFile) {
+    public Speech process(Path inputVoiceFile) {
         log.info("Starting {}", inputVoiceFile);
         Optional<Path> convertedPath = convertTo16kWavAudio(inputVoiceFile);
         if (!convertedPath.isPresent()) {
-            log.error("No output generated for {}, ignoring", inputVoiceFile);
-            return;
+            log.error("Unable to create temporary file.");
+            return null;
         }
 
         log.info("Input file converted to 16k {} ", convertedPath);
         try {
             Speech speech = sphinxEngine.getSpeech(convertedPath.get());
             log.info("Extracted text: {}", speech);
+            return speech;
         } catch (IOException ex) {
             log.error("Error while extracting speech from wav file.", ex);
+            return null;
+        } finally {
+            deleteIfExists(convertedPath.get());
         }
     }
 
     private Optional<Path> convertTo16kWavAudio(Path inputVoiceFile) {
         //ffmpeg -i <input-file> -ar 16000 -ac 1 <output-file>
         Path output16kWavFile = output16kWavFile(inputVoiceFile);
-        if (Files.exists(output16kWavFile)) {
-            try {
-                Files.delete(output16kWavFile);
-            } catch(IOException ex) {
-                throw new RuntimeException("Unable to delete temporary conversion file:" + output16kWavFile, ex);
-            }
-        }
+        deleteIfExists(output16kWavFile);
 
         String[] ffmpegCmd =
                 {
-                        sphinxProperties.getFfmpegPath(),
+                        sphinxProperties.getFfmpegBinaryPath(),
                         "-i",
                         inputVoiceFile.toString(),
                         "-ar",
@@ -68,14 +66,15 @@ public class SphinxSpeech2TextEngine implements Speech2TextEngine {
                 };
 
         log.info("Executing {}", Arrays.toString(ffmpegCmd));
+        File tempLogFile = null;
         try {
             ProcessBuilder procBuilder = new ProcessBuilder(ffmpegCmd);
             procBuilder.directory(new File(batchProperties.getVoiceLogInput()));
-            File tempLogFile =
+            tempLogFile =
                     Files.createTempFile(
-                            Paths.get(batchProperties.getVoiceLogOutput()),
+                            Paths.get(batchProperties.getVoiceLogTmp()),
                             "ffmpeg",
-                            "log",
+                            ".log",
                             new FileAttribute[]{}).toFile();
 
             procBuilder.redirectOutput(tempLogFile);
@@ -93,9 +92,23 @@ public class SphinxSpeech2TextEngine implements Speech2TextEngine {
             }
         } catch (IOException | InterruptedException ex) {
             log.error("Error while running 'ffmpeg' process.", ex);
+        } finally {
+            if (tempLogFile != null) {
+                deleteIfExists(tempLogFile.toPath());
+            }
         }
 
         return Optional.of(output16kWavFile);
+    }
+
+    private void deleteIfExists(Path file) {
+        if (Files.exists(file)) {
+            try {
+                Files.delete(file);
+            } catch(IOException ex) {
+                throw new RuntimeException("Unable to delete temporary file:" + file, ex);
+            }
+        }
     }
 
     private Path output16kWavFile(Path inputVoiceFile) {

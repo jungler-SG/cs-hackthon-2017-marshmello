@@ -6,5 +6,5 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "sphinx")
 @Data
 public class SphinxProperties {
-    private String ffmpegPath;
+    private String ffmpegBinaryPath;
 }

@@ -9,6 +9,4 @@ public class MarshMellowBatchProperties {
     private String voiceLogInput;
     private String voiceLogOutput;
     private String voiceLogTmp;
-
-    private String ffmpegPath;
 }

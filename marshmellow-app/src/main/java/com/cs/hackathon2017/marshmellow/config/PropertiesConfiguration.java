@@ -10,7 +10,8 @@ import javax.annotation.PostConstruct;
 @EnableConfigurationProperties({
         ElasticSearchProperties.class,
         MarshMellowBatchProperties.class,
-        SphinxProperties.class
+        SphinxProperties.class,
+        WaveformProperties.class
 })
 @Slf4j
 public class PropertiesConfiguration {

@@ -1,3 +1,18 @@
-<div class="voice-log-list">
-    <voice-log *ngFor="let voiceLog of voiceLogs" [voiceLog]="voiceLog"></voice-log>
+<div class="voice-log-list" [ngSwitch]="state">
+  <div *ngSwitchCase="'hot'">
+    hot...
+  </div>
+  <div class="loader" *ngSwitchCase="'loading'">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+  <div class="list" *ngSwitchCase="'loaded'">
+    <app-voice-log *ngFor="let voiceLog of voiceLogs" [voiceLog]="voiceLog"></app-voice-log>
+  </div>
+  <div class="error" *ngSwitchCase="'error'">
+    <h2>Error !</h2>
+  </div>
 </div>
