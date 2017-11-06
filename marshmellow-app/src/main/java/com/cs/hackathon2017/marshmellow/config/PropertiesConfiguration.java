@@ -9,7 +9,8 @@ import javax.annotation.PostConstruct;
 @Configuration
 @EnableConfigurationProperties({
         MarshMellowBatchProperties.class,
-        SphinxProperties.class
+        SphinxProperties.class,
+        WaveformProperties.class
 })
 @Slf4j
 public class PropertiesConfiguration {

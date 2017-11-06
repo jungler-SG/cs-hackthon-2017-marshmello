@@ -6,5 +6,5 @@ import java.nio.file.Path;
 
 @Service
 public interface Speech2TextEngine {
-    void process(Path inputVoiceLog);
+    Speech process(Path inputVoiceLog);
 }
