@@ -1,7 +1,11 @@
 batch:
-  voice-log-input: /Users/raj/Hackathon2017/data/input
-  voice-log-output: /Users/raj/Hackathon2017/data/output
-  voice-log-tmp: /Users/raj/Hackathon2017/data/tmp
+  voice-log-input: /tmp
+  voice-log-output: /tmp
+  voice-log-tmp: /tmp
 
 sphinx:
-  ffmpeg-path: /Users/raj/Hackathon2017/ffmpeg
+  ffmpeg-path: /usr/local/bin/ffmpeg
+
+elasticsearch:
+  elastic-version: 5.5
+  domain-arn: arn:aws:es:ap-southeast-1:744922890941:domain/cs-hackthon-marshmello
