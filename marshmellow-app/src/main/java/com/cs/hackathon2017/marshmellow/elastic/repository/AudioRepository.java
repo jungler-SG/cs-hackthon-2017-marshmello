@@ -15,6 +15,9 @@ public interface AudioRepository extends ElasticsearchRepository<ElasticAudio, S
     List<ElasticAudio> findAllByWavfile(String wavfile);
 
     List<ElasticAudio> findAllByFullTextContaining(String keyword);
-    List<ElasticAudio> findAllByFullTextContaining(String keyword, Sort sort);
+
+    List<ElasticAudio> findAllByFullTextContainsAndRmIdEquals(String keyword, String rmid);
+    List<ElasticAudio> findAllByFullTextContainsAndClientIdEquals(String keyword, String clientId);
+    List<ElasticAudio> findAllByFullTextContainsAndRmIdEqualsAndClientIdEquals(String keyword, String rmid, String clientId);
 
 }

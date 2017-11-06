@@ -1,6 +1,7 @@
 package com.cs.hackathon2017.marshmellow.service;
 
 import com.cs.hackathon2017.marshmellow.config.MarshMellowBatchProperties;
+import com.cs.hackathon2017.marshmellow.elastic.repository.AudioRepository;
 import com.cs.hackathon2017.marshmellow.model.ElasticAudio;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ public class MarshMellowService {
     private static String NOT_FOUND = "{\"error\":\"not-found\"}";
 
     MarshMellowBatchProperties batchProperties;
+    AudioRepository audioRepository;
 
     public String getWaveform(String fileId) {
         try {
@@ -40,9 +42,14 @@ public class MarshMellowService {
         return new FileSystemResource(voiceFilePath.toFile());
     }
 
-    public List<ElasticAudio> searchFor(String keyWords) {
-        log.info("Searching for {}", keyWords);
-        return mockResult();
+    public List<ElasticAudio> searchFor(String keyWord, String clientId, String rmId) {
+        log.info("Searching for {}, clientId {}, rmId {}", keyWord, clientId, rmId);
+
+        if (clientId == null && rmId == null) return this.audioRepository.findAllByFullTextContaining(keyWord);
+        if (clientId ==null) return this.audioRepository.findAllByFullTextContainsAndRmIdEquals(keyWord, rmId);
+        if (rmId ==null) return this.audioRepository.findAllByFullTextContainsAndClientIdEquals(keyWord, clientId);
+        return this.audioRepository.findAllByFullTextContainsAndRmIdEqualsAndClientIdEquals(keyWord, rmId, clientId);
+
     }
 
     private List<ElasticAudio> mockResult() {

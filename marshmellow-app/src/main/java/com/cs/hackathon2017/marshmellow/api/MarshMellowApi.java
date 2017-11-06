@@ -8,6 +8,7 @@ import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
@@ -34,9 +35,12 @@ public class MarshMellowApi {
 
     }
 
-    @GetMapping("/api/mock/search/{keyWords}")
+    @GetMapping("/api/search/{keyWords}")
     @ResponseBody
-    public List<ElasticAudio> searchFor(@PathVariable("keyWords") String keyWords) {
-        return service.searchFor(keyWords);
+    public List<ElasticAudio> searchFor(@PathVariable("keyWords") String keyWords,
+                                        @RequestParam(required = false) String clientId,
+                                        @RequestParam(required = false) String rmId) {
+        return service.searchFor(keyWords, clientId, rmId);
     }
+
 }

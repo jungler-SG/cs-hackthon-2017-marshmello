@@ -25,8 +25,6 @@ public class ElasticAudio {
     private String clientId;
     private String fullText;
 
-
-    @Transient
     private List<String[]> keywordTimes;
 
 }
