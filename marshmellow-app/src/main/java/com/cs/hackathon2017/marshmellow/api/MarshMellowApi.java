@@ -34,7 +34,7 @@ public class MarshMellowApi {
 
     }
 
-    @GetMapping("/api/search/{keyWords}")
+    @GetMapping("/api/mock/search/{keyWords}")
     @ResponseBody
     public List<ElasticAudio> searchFor(@PathVariable("keyWords") String keyWords) {
         return service.searchFor(keyWords);
