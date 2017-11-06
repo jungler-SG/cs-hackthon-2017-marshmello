@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -63,7 +64,7 @@ public class MarshMellowService {
                 "RMID1",
                 "clientId1",
                 "this is full text of the speech from mock search",
-                List.of(new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"})
+                Arrays.asList(new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"})
         );
     }
 
