@@ -44,22 +44,22 @@ public class MarshMellowService {
 
     public List<ElasticAudio> searchFor(String keyWord, String clientId, String rmId) {
         log.info("Searching for {}, clientId {}, rmId {}", keyWord, clientId, rmId);
-
-        if (clientId == null && rmId == null) return this.audioRepository.findAllByFullTextContaining(keyWord);
-        if (clientId == null) return this.audioRepository.findAllByFullTextContainsAndRmIdEquals(keyWord, rmId);
-        if (rmId == null) return this.audioRepository.findAllByFullTextContainsAndClientIdEquals(keyWord, clientId);
-        return this.audioRepository.findAllByFullTextContainsAndRmIdEqualsAndClientIdEquals(keyWord, rmId, clientId);
+        if(keyWord == null || keyWord.trim().isEmpty()) keyWord = "*";
+        if (clientId == null && rmId == null) return this.audioRepository.findAllByFullTextIn(keyWord.split("\\s+"));
+        if (clientId ==null) return this.audioRepository.findAllByRmIdEqualsAndFullTextIn(rmId, keyWord.split("\\s+"));
+        if (rmId ==null) return this.audioRepository.findAllByClientIdEqualsAndFullTextIn(clientId, keyWord.split("\\s+"));
+        return this.audioRepository.findAllByRmIdEqualsAndClientIdEqualsAndFullTextIn(rmId, clientId, keyWord.split("\\s+"));
 
     }
 
     public void saveAudio() {
         this.audioRepository.save(new ElasticAudio("4",
-                "y224480@rtcuat.credit-suisse.com--conference_2017-11-02_12-41.wav",
-                "2017-11-02 12:41:10",
-                "y2244880",
-                "20978910",
-                "this is a full audio text inserted by API",
-                new String[][]{new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"}}));
+                        "y224480@rtcuat.credit-suisse.com--conference_2017-11-02_12-41.wav",
+                        "2017-11-02 12:41:10",
+                        "y2244880",
+                        "20978910",
+                        "this is a full audio text inserted by API",
+                        new String[][]{new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"}}));
     }
 
     public void saveAudio(String fileId, String wavfile, Speech speech, String rmId, String clientId, String createdTime) {
