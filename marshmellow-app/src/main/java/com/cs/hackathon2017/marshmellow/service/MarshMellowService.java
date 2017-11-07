@@ -3,11 +3,14 @@ package com.cs.hackathon2017.marshmellow.service;
 import com.cs.hackathon2017.marshmellow.batch.Speech;
 import com.cs.hackathon2017.marshmellow.config.MarshMellowBatchProperties;
 import com.cs.hackathon2017.marshmellow.elastic.repository.AudioRepository;
+import com.cs.hackathon2017.marshmellow.elastic.repository.KeywordRepository;
 import com.cs.hackathon2017.marshmellow.model.ElasticAudio;
+import com.cs.hackathon2017.marshmellow.model.Keyword;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.core.io.FileSystemResource;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -26,6 +29,7 @@ public class MarshMellowService {
 
     MarshMellowBatchProperties batchProperties;
     AudioRepository audioRepository;
+    KeywordRepository keywordRepository;
 
     public String getWaveform(String fileId) {
         try {
@@ -50,6 +54,10 @@ public class MarshMellowService {
         if (rmId ==null) return this.audioRepository.findAllByClientIdEqualsAndFullTextIn(clientId, keyWord.split("\\s+"));
         return this.audioRepository.findAllByRmIdEqualsAndClientIdEqualsAndFullTextIn(rmId, clientId, keyWord.split("\\s+"));
 
+    }
+
+    public List<Keyword> getPopularKeywords() {
+        return this.keywordRepository.findAllByKeywordOrderByCount("*",  new Sort(Sort.Direction.DESC, "count"));
     }
 
     public void saveAudio() {

@@ -1,6 +1,7 @@
 package com.cs.hackathon2017.marshmellow.api;
 
 import com.cs.hackathon2017.marshmellow.model.ElasticAudio;
+import com.cs.hackathon2017.marshmellow.model.Keyword;
 import com.cs.hackathon2017.marshmellow.service.MarshMellowService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -43,4 +44,9 @@ public class MarshMellowApi {
         return service.searchFor(keyWords, clientId, rmId);
     }
 
+    @GetMapping("/api/keywords/popular")
+    @ResponseBody
+    public List<Keyword> popularKeywords() {
+        return service.getPopularKeywords();
+    }
 }

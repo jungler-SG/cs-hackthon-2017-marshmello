@@ -1,0 +1,36 @@
+{ "index" : { "_index": "keywords", "_type" : "keyword" }}
+{"keyword": "apple", "count": 108}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword": "microsoft", "count": 78}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword" }}
+{"keyword": "buy", "count": 300}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword": "sell", "count": 280}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword" }}
+{"keyword": "confirmed", "count": 17}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword": "win", "count": 116}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword" }}
+{"keyword": "stock", "count": 281}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword": "bond", "count": 176}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword" }}
+{"keyword": "money", "count": 13}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword": "profit", "count": 176}
+
+
+{ "index" : { "_index": "keywords", "_type" : "keyword" }}
+{"keyword": "china", "count": 33}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword": "loss", "count": 11}
