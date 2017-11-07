@@ -82,9 +82,9 @@ export class VoiceLogComponent implements AfterViewInit, OnDestroy {
       // this.createPoints();
       this.createSegment();
     }.bind(this));
-    document.querySelector(`#${this.voiceLog.id}_audio`).onended = () => {
+    document.querySelector(`#${this.voiceLog.id}_audio`).addEventListener('ended', () => {
       this.isPlaying = false;
-    };
+    });
   }
 
   createSegment(): void {
