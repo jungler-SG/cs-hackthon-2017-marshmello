@@ -1,11 +1,11 @@
 batch:
-  voice-log-base: /tmp
+  voice-log-base: /home/ubuntu/data
   voice-log-input: ${voice-log-base}/input
   voice-log-output: ${voice-log-base}/output
   voice-log-tmp: ${voice-log-base}/tmp
 
 sphinx:
-  ffmpeg-binary-path: /Users/raj/Hackathon2017/ffmpeg
+  ffmpeg-binary-path: /usr/bin/ffmpeg
 
 elasticsearch:
   elastic-version: 5.5
