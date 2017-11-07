@@ -3,7 +3,7 @@
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    height: 338px;
+    height: 398px;
     min-height: 338px;
     justify-content: center;
     margin: 0 auto;
@@ -14,7 +14,7 @@
     min-height: 195px;
     background: url("../../assets/images/bg-voice-log.png") no-repeat;
     background-size: cover;
-    background-position: 10%;
+    /*background-position: 10%;*/
 }
 
 .search-input {

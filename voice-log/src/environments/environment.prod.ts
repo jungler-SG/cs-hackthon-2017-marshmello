@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  waveformUri: '/api/waveform',
+  voiceUri: '/api/voice'
 };

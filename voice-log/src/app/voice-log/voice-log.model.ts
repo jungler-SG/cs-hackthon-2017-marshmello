@@ -1,4 +1,5 @@
 import {WordTime} from './word-time.model';
+import {environment} from '../../environments/environment';
 
 export class VoiceLog {
   id: string;
@@ -17,9 +18,9 @@ export class VoiceLog {
 
     this.rmId = response.rmId;
     this.clientId = response.clientId;
-    this.waveform = `/api/waveform/${this.id}.json`;
+    this.waveform = `${environment.waveformUri}/${this.id}.json`;
     this.fullText = response.fullText;
-    this.wavFile = `/api/voice/${response.wavfile}`;
+    this.wavFile = `${environment.voiceUri}/${response.wavfile}`;
     this.wordTime = [];
     const wordTimeList = response.keywordTimes || [];
     wordTimeList.forEach((wordTime) => {
