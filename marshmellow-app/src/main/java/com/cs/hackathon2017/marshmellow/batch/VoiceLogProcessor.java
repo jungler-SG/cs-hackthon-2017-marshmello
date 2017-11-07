@@ -103,7 +103,7 @@ public class VoiceLogProcessor {
                         log.error("Cannot process {}, ignoring.", newVoiceLog, ex);
                     }
                 }
-
+                log.info("Waiting for new voice logs.");
                 sleep(5);
             }
 
