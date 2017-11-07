@@ -71,8 +71,8 @@ export class HotKeywordsComponent implements OnInit, OnDestroy {
     this.done = false;
 
 
-    this.http.get('/api/keywords/popular').subscribe((response: any) => {
-      response.totalSize = response.keywords.length;
+    this.http.get('/api/keywords/popular').subscribe((keywords: any) => {
+      const response = {'keywords': keywords, 'totalSize': keywords.length};
       this.selectNone();
       this.loadKeywords(response);
       this.doRandomAction();

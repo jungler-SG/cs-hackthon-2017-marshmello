@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface KeywordRepository extends ElasticsearchRepository<Keyword, String> {
     List<Keyword> findAllByKeywordOrderByCount(String keyword, Sort sort);
+
+    List<Keyword> findAllByKeyword(String keyword);
 }

@@ -1,8 +1,10 @@
 <div class="fancy-ball">
   <div class="selected-project" *ngIf="selected_project_changed">
-    <h1>{{selected_project.count}}</h1>
-    <h2>
+    <h1>
       {{selected_project.keyword}}
+    </h1>
+    <h2>
+      {{selected_project.count}}
     </h2>
   </div>
   <canvas #canvasEl></canvas>

@@ -19,6 +19,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -49,11 +50,31 @@ public class MarshMellowService {
     public List<ElasticAudio> searchFor(String keyWord, String clientId, String rmId) {
         log.info("Searching for {}, clientId {}, rmId {}", keyWord, clientId, rmId);
         if(keyWord == null || keyWord.trim().isEmpty()) keyWord = "*";
-        if (clientId == null && rmId == null) return this.audioRepository.findAllByFullTextIn(keyWord.split("\\s+"));
-        if (clientId ==null) return this.audioRepository.findAllByRmIdEqualsAndFullTextIn(rmId, keyWord.split("\\s+"));
-        if (rmId ==null) return this.audioRepository.findAllByClientIdEqualsAndFullTextIn(clientId, keyWord.split("\\s+"));
-        return this.audioRepository.findAllByRmIdEqualsAndClientIdEqualsAndFullTextIn(rmId, clientId, keyWord.split("\\s+"));
+        String[] splited = keyWord.split("\\s+");
+        this.incrementKeywordCount(splited);
+        if (clientId == null && rmId == null) return this.audioRepository.findAllByFullTextIn(splited);
+        if (clientId ==null) return this.audioRepository.findAllByRmIdEqualsAndFullTextIn(rmId, splited);
+        if (rmId ==null) return this.audioRepository.findAllByClientIdEqualsAndFullTextIn(clientId, splited);
+        return this.audioRepository.findAllByRmIdEqualsAndClientIdEqualsAndFullTextIn(rmId, clientId, splited);
 
+    }
+
+    private void incrementKeywordCount(String[] keywords) {
+        try {
+            for (String word : keywords) {
+                List<Keyword> storedKeywords = this.keywordRepository.findAllByKeyword(word);
+                if (storedKeywords.size() == 0) {
+                    log.info("new keyword: {}", word);
+                    this.keywordRepository.save(new Keyword(UUID.randomUUID().toString(), word, 1));
+                } else {
+                    log.info("increment keyword: {}", word);
+                    Keyword storedKeyword = storedKeywords.get(0);
+                    this.keywordRepository.save(new Keyword(storedKeyword.getId(), storedKeyword.getKeyword(), storedKeyword.getCount() + 1));
+                }
+            }
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
     }
 
     public List<Keyword> getPopularKeywords() {

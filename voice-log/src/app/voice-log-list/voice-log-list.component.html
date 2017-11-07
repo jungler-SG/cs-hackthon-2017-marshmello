@@ -10,6 +10,9 @@
     </div>
   </div>
   <div class="list" *ngSwitchCase="'loaded'">
+    <div class="no-data" *ngIf="voiceLogs.length === 0">
+      <h2>No data!</h2>
+    </div>
     <app-voice-log *ngFor="let voiceLog of voiceLogs" [voiceLog]="voiceLog"></app-voice-log>
   </div>
   <div class="error" *ngSwitchCase="'error'">
