@@ -172,7 +172,7 @@ public class VoiceLogProcessor {
                         new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(voiceLog.toFile().lastModified()))
                 );
             } catch (ElasticsearchException ex) {
-                log.error("IGNORING ERROR: {}", ex.getMessage());
+                log.error("IGNORING ERROR: {}", ex.getMessage(), ex);
             }
         } catch (IOException ex) {
             log.error("Unable to move voice log input to output folder. input {}, output {}", voiceLog, outputVoiceLogPath, ex);
