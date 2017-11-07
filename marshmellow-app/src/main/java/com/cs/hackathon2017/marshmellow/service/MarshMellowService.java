@@ -148,6 +148,7 @@ public class MarshMellowService {
             return Files.list(Paths.get(batchProperties.getVoiceLogOutput()))
                     .filter(f -> f.getFileName().toString().contains(baseName))
                     .filter(f -> !f.getFileName().toString().endsWith(".json"))
+                    .filter(f -> !f.getFileName().toString().endsWith("_speech.txt"))
                     .findFirst()
                     .orElse(jsonFileName);
         } catch (IOException ex) {
