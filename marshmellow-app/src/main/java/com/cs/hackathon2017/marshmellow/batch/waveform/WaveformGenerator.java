@@ -87,7 +87,7 @@ public class WaveformGenerator {
     }
 
     private Path outputJson(Path inputVoiceFile) {
-        String outputFilename = FilenameUtils.removeExtension(inputVoiceFile.toString()) + "_waveform.json";
+        String outputFilename = FilenameUtils.removeExtension(inputVoiceFile.getFileName().toString()) + "_waveform.json";
         return Paths.get(batchProperties.getVoiceLogTmp(), outputFilename);
     }
 
