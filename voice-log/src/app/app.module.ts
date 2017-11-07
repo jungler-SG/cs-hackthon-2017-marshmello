@@ -8,6 +8,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { VoiceLogListComponent } from './voice-log-list/voice-log-list.component';
 import { VoiceLogComponent } from './voice-log/voice-log.component';
 import { MessageService } from './message.service';
+import { HotKeywordsComponent } from './hot-keywords/hot-keywords.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MessageService } from './message.service';
     HeaderComponent,
     SearchBarComponent,
     VoiceLogListComponent,
-    VoiceLogComponent
+    VoiceLogComponent,
+    HotKeywordsComponent
   ],
   imports: [
     BrowserModule,

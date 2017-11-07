@@ -2,10 +2,10 @@ import {WordTime} from './word-time.model';
 
 export class VoiceLog {
   id: string;
-  rmName: string;
-  clientName: string;
+  rmId: string;
+  clientId: string;
   waveform: string;
-  fulltext: string;
+  fullText: string;
   wavFile: string;
   wordTime: WordTime[];
   highlightFulltext: string;
@@ -15,13 +15,13 @@ export class VoiceLog {
     this.id = response.id;
     this.keywords = keywords.split(/(\s+)/);
 
-    this.rmName = response.rmName;
-    this.clientName = response.clientName;
+    this.rmId = response.rmId;
+    this.clientId = response.clientId;
     this.waveform = `/api/waveform/${this.id}.json`;
-    this.fulltext = response.fulltext;
-    this.wavFile = response.wavfile;
+    this.fullText = response.fullText;
+    this.wavFile = `/api/voice/${response.wavfile}`;
     this.wordTime = [];
-    const wordTimeList = response.wordTime || [];
+    const wordTimeList = response.keywordTimes || [];
     wordTimeList.forEach((wordTime) => {
       this.wordTime.push(new WordTime(wordTime.word, wordTime.startTime, wordTime.endTime));
     });
@@ -29,7 +29,7 @@ export class VoiceLog {
   }
 
   getFulltextHtmlWithHighlight(): string {
-    let highlightFulltext = this.fulltext;
+    let highlightFulltext = this.fullText || '';
     this.keywords.forEach((keyword) => {
       const rg = new RegExp(keyword, 'g');
       highlightFulltext = highlightFulltext.replace(rg, `<span class="highlight">${keyword}</span>`);
