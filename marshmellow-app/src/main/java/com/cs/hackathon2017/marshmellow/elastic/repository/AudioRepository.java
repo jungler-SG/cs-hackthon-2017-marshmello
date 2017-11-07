@@ -1,7 +1,6 @@
 package com.cs.hackathon2017.marshmellow.elastic.repository;
 
 import com.cs.hackathon2017.marshmellow.model.ElasticAudio;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
