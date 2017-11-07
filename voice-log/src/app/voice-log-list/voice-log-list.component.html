@@ -1,6 +1,6 @@
 <div class="voice-log-list" [ngSwitch]="state">
   <div *ngSwitchCase="'hot'">
-    hot...
+    <app-hot-keywords></app-hot-keywords>
   </div>
   <div class="loader" *ngSwitchCase="'loading'">
     <div class="spinner">

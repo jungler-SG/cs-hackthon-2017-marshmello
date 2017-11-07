@@ -74,6 +74,7 @@ export class HotKeywordNode {
 
     if (typeof this.data.iconUrlSmall !== 'undefined' && !this.data.lame) {
       this.thumbImg.src = this.data.iconUrlSmall;
+      // this.thumbImg.innerText = 'test';
     } else if (this.data.startsWith) {
       this.thumbImg.src = fallbackImg;
     }
@@ -259,12 +260,15 @@ export class HotKeywordNode {
       y: this.pos.y - logoSize / 2
     };
 
-    ctx.globalAlpha = (this.fadeCount <= .9) ? this.fadeCount : .9;
-    ctx.drawImage(this.thumbImg, logoPos.x, logoPos.y, logoSize, logoSize);
+    // ctx.globalAlpha = (this.fadeCount <= .9) ? this.fadeCount : .9;
+    // ctx.drawImage(this.thumbImg, logoPos.x, logoPos.y, logoSize, logoSize);
+    ctx.fillStyle = this.data.color;
+    ctx.font = '15px Georgia';
+    ctx.fillText(this.data.keyword, logoPos.x, logoPos.y + 20, logoSize, logoSize);
 
     // Colorize fallback logo on non-IE browsers
-    if (typeof this.data.iconUrlSmall == 'undefined'
-      && navigator.userAgent.indexOf('MSIE') == -1) {
+    if (typeof this.data.iconUrlSmall === 'undefined'
+      && navigator.userAgent.indexOf('MSIE') === -1) {
       ctx.globalCompositeOperation = 'lighten';
       ctx.fillStyle = this.data.fallbackColor;
       ctx.fillRect(logoPos.x, logoPos.y, logoSize, logoSize);

@@ -1,5 +1,7 @@
 package com.cs.hackathon2017.marshmellow.batch;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -13,6 +15,15 @@ public class Speech {
 
     public void addWord(String word, long startTime, long endTime) {
         wordsList.add(new Word(word, startTime, endTime));
+    }
+
+    public String toJSON() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            return mapper.writeValueAsString(this);
+        } catch (JsonProcessingException jpe) {
+            throw new RuntimeException("Cannot parse as json", jpe);
+        }
     }
 
     @Data

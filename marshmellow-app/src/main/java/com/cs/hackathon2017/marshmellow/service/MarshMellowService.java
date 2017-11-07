@@ -1,5 +1,6 @@
 package com.cs.hackathon2017.marshmellow.service;
 
+import com.cs.hackathon2017.marshmellow.batch.Speech;
 import com.cs.hackathon2017.marshmellow.config.MarshMellowBatchProperties;
 import com.cs.hackathon2017.marshmellow.elastic.repository.AudioRepository;
 import com.cs.hackathon2017.marshmellow.elastic.repository.KeywordRepository;
@@ -60,7 +61,6 @@ public class MarshMellowService {
     }
 
     public void saveAudio() {
-
         this.audioRepository.save(new ElasticAudio("4",
                         "y224480@rtcuat.credit-suisse.com--conference_2017-11-02_12-41.wav",
                         "2017-11-02 12:41:10",
@@ -69,6 +69,34 @@ public class MarshMellowService {
                         "this is a full audio text inserted by API",
                         new String[][]{new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"}}));
     }
+
+    public void saveAudio(String fileId, String wavfile, Speech speech, String rmId, String clientId, String createdTime) {
+        ElasticAudio elasticAudio =
+                new ElasticAudio(
+                        fileId,
+                        wavfile,
+                        createdTime,
+                        rmId,
+                        clientId,
+                        speech.getFullText(),
+                        toStringArray(speech.getWordsList())
+                );
+
+        this.audioRepository.save(elasticAudio);
+    }
+
+    private String[][] toStringArray(List<Speech.Word> keyWords) {
+        return keyWords.stream()
+                .map(w ->
+                        new String[]{
+                                w.getWord(),
+                                String.valueOf(w.getStartTime()),
+                                String.valueOf(w.getEndTime())
+                        }
+                )
+                .toArray(String[][]::new);
+    }
+
 
     private List<ElasticAudio> mockResult() {
         try {
