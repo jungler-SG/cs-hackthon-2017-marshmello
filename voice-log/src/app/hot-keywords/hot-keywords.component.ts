@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {HotKeywordNode} from '../hot-keyword/hot_keyword_node';
 import {Vector} from '../hot-keyword/vector';
 import {Constants} from '../constants';
+import {MessageService} from '../message.service';
 
 @Component({
   selector: 'app-hot-keywords',
@@ -40,8 +41,9 @@ export class HotKeywordsComponent implements OnInit, OnDestroy {
   hovered_project: any = {};
   keywords_subscription;
   colors: string[];
+  state = 'loading';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private messageService: MessageService) {
   }
 
   /**
@@ -71,22 +73,30 @@ export class HotKeywordsComponent implements OnInit, OnDestroy {
     this.done = false;
 
 
-    this.http.get('/api/keywords/popular').subscribe((response: any) => {
-      response.totalSize = response.keywords.length;
+    this.http.get('/api/keywords/popular').subscribe((keywords: any) => {
+      const response = {'keywords': keywords, 'totalSize': keywords.length};
       this.selectNone();
       this.loadKeywords(response);
       this.doRandomAction();
       this.canvas.dispatchEvent(new Event('mousemove'));
+      this.state = 'loaded';
     }, err => {
-      console.log(err);
+      this.state = 'error';
     });
 
     return this.timer(this.update);
   }
 
   ngOnDestroy() {
-    this.keywords_subscription.unsubscribe();
-    this.done = true;
+    try {
+      this.keywords_subscription.unsubscribe();
+      this.done = true;
+    } catch (e) {
+    }
+  }
+
+  search(keyword) {
+    this.messageService.sendMessage(keyword);
   }
 
   private loadKeywords = (response) => {
@@ -145,7 +155,6 @@ export class HotKeywordsComponent implements OnInit, OnDestroy {
    * @param node  the project object to be selected.
    */
   private selectProject = (node: any) => {
-    console.log(node);
     this.selected_project = node.data;
     setTimeout(() => {
       this.selected_project_changed = true;

@@ -5,8 +5,8 @@ export class WordTime {
 
     constructor(word: string, startTime: string, endTime: string) {
       this.word = word;
-      this.startTime = parseFloat(startTime);
-      this.endTime = parseFloat(endTime);
+      this.startTime = parseFloat(startTime) / 1000;
+      this.endTime = parseFloat(endTime) / 1000;
     }
 
 }

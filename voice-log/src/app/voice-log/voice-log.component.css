@@ -1,11 +1,42 @@
 .voice-log {
     width: auto;
-    padding: 20px;
+    padding: 20px 60px;
     border-bottom: 1px dashed #4c4c4c;
 }
 
 .voice-subtitle {
-    margin: 0px
+   color: gray;
 }
 
+.line {
+  display: inline-block;
+  width: 90px;
+  border: 1px solid;
+  margin-bottom: 4px;
+}
 
+.voice-log p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.voice-log .fa-ellipsis-h {
+  font-size: 13px;
+}
+
+.log-action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.create-time {
+  margin-top: 10px !important;
+  font-size: 12px;
+
+}
+
+.voice-waveform {
+  max-width: 600px;
+}

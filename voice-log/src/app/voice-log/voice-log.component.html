@@ -1,6 +1,31 @@
 <div class="voice-log">
+  <div class="log-action-bar">
+      <div>
+        <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+        <span>RM: {{voiceLog.rmId}}</span>
+        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        <span class="line"></span>
+        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        <span>Client: {{voiceLog.clientId}}</span>
+
+      </div>
+      <div>
+        <button class="play-audio" (click)="play()" *ngIf="!isPlaying">
+          <i class="fa fa-play" aria-hidden="true"></i>
+          play
+        </button>
+        <button class="pause-audio" (click)="pause()" *ngIf="isPlaying">
+          <i class="fa fa-pause" aria-hidden="true"></i>
+          pause
+        </button>
+      </div>
+  </div>
   <p class="voice-subtitle" [innerHTML]="voiceLog.highlightFulltext"></p>
   <div id="{{voiceLog.id}}" class="voice-waveform"></div>
   <audio id="{{voiceLog.id}}_audio"></audio>
-  <button (click)="play()">play</button>
+  <p class="create-time">
+    <span>{{voiceLog.createdTime}}</span>
+  </p>
+
 </div>

@@ -3,23 +3,21 @@
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    height: 338px;
-    min-height: 338px;
+    height: 280px;
     justify-content: center;
     margin: 0 auto;
     padding: 15px;
     position: relative;
     text-align: left;
-    height: 100%;
-    min-height: 195px;
     background: url("../../assets/images/bg-voice-log.png") no-repeat;
     background-size: cover;
-    background-position: 10%;
+    background-position-y: 20%;
 }
 
 .search-input {
     display: flex;
-    align-content: center;
+    align-content: flex-start;
+    justify-content: center;
 }
 
 .search {
@@ -43,5 +41,5 @@
 }
 
 .search::placeholder {
-  color: white;
+  color: #f1f1f1;
 }

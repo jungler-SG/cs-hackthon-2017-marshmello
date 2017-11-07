@@ -3,11 +3,12 @@
   justify-content: center;
   align-content: center;
   position: relative;
+  color: #4c4c4c;
 }
 
 .selected-project {
   position: absolute;
-  top: 35%;
+  top: 45%;
   width: 300px;
   max-height: 200px;
   text-align: center;
@@ -16,4 +17,17 @@
 
 .fancy-ball h1 {
   font-size: 50px;
+}
+
+.fancy-ball h2 {
+  font-size: 50px;
+  color: #adadad;
+}
+
+.fancy-ball .hot-keyword {
+  cursor: pointer;
+}
+
+.fancy-ball .loader {
+  position: absolute;
 }

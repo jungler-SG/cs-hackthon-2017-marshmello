@@ -12,6 +12,7 @@ export class VoiceLogComponent implements AfterViewInit, OnDestroy {
 
   peaksInstance: any;
   interval: any;
+  isPlaying = false;
 
   constructor(private voiceLogEle: ElementRef) {
 
@@ -35,11 +36,19 @@ export class VoiceLogComponent implements AfterViewInit, OnDestroy {
 
   play(): void {
     this.loadAudio();
+    this.isPlaying = true;
     this.peaksInstance.player.play();
+  }
+
+  pause(): void {
+    this.loadAudio();
+    this.isPlaying = false;
+    this.peaksInstance.player.pause();
   }
 
   playKeyword(event): void {
     this.loadAudio();
+    this.isPlaying = true;
     const segmentId = event.target.getAttribute('segmentId');
     const segment = this.peaksInstance.segments.getSegment(segmentId);
     if (segment) {
@@ -48,7 +57,7 @@ export class VoiceLogComponent implements AfterViewInit, OnDestroy {
       this.interval = setInterval(function () {
         if (this.peaksInstance.player.getCurrentTime() >= segment.endTime) {
           clearInterval(this.interval);
-          this.peaksInstance.player.play();
+          this.play();
         }
       }.bind(this), 30);
     }
@@ -67,12 +76,16 @@ export class VoiceLogComponent implements AfterViewInit, OnDestroy {
       container: document.querySelector(`#${this.voiceLog.id}`),
       mediaElement: document.querySelector(`#${this.voiceLog.id}_audio`),
       height: 80,
+      zoomLevels: [512, 1024, 2048, 4096],
       dataUri: this.voiceLog.waveform
     });
     this.peaksInstance.on('peaks.ready', function () {
       // this.createPoints();
       this.createSegment();
     }.bind(this));
+    document.querySelector(`#${this.voiceLog.id}_audio`).addEventListener('ended', () => {
+      this.isPlaying = false;
+    });
   }
 
   createSegment(): void {

@@ -41,7 +41,7 @@ export class HotKeywordNode {
     this.IDLE_DRAG = 0.02;
     this.ACTIVE_DRAG = 0.5;
     this.ACTIVE_RADIUS = 175;
-    this.STROKE_WIDTH = 10;
+    this.STROKE_WIDTH = 6;
 
     const startAngle = Math.random() * Math.PI * 2;
     const startRadius = Math.random() * 20;
@@ -263,7 +263,7 @@ export class HotKeywordNode {
     // ctx.globalAlpha = (this.fadeCount <= .9) ? this.fadeCount : .9;
     // ctx.drawImage(this.thumbImg, logoPos.x, logoPos.y, logoSize, logoSize);
     ctx.fillStyle = this.data.color;
-    ctx.font = '15px Georgia';
+    ctx.font = '20px Arial, "Helvetica Neue", Helvetica, sans-serif;';
     ctx.fillText(this.data.keyword, logoPos.x, logoPos.y + 20, logoSize, logoSize);
 
     // Colorize fallback logo on non-IE browsers

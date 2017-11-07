@@ -1,8 +1,9 @@
 <section class="search-bar">
   <div class="active">
+    <app-header></app-header>
     <h2>Voice log</h2>
-    <input class="search ng-pristine ng-valid ng-touched" type="text" placeholder="Type for search"
-           (keyup)="typeForSearch($event)">
+    <input id="searchInput" class="search ng-pristine ng-valid ng-touched" type="text" placeholder="Type for search"
+           (keyup)="typeForSearch($event)" >
   </div>
   <div class="dark-canvas"></div>
 </section>
