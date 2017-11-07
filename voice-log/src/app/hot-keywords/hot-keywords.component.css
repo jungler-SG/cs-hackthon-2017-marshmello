@@ -23,3 +23,11 @@
   font-size: 50px;
   color: #adadad;
 }
+
+.fancy-ball .hot-keyword {
+  cursor: pointer;
+}
+
+.fancy-ball .loader {
+  position: absolute;
+}

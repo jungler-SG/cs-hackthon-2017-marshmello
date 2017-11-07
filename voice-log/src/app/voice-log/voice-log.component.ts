@@ -76,15 +76,16 @@ export class VoiceLogComponent implements AfterViewInit, OnDestroy {
       container: document.querySelector(`#${this.voiceLog.id}`),
       mediaElement: document.querySelector(`#${this.voiceLog.id}_audio`),
       height: 80,
+      zoomLevels: [512, 1024, 2048, 4096],
       dataUri: this.voiceLog.waveform
     });
     this.peaksInstance.on('peaks.ready', function () {
       // this.createPoints();
       this.createSegment();
     }.bind(this));
-    document.querySelector(`#${this.voiceLog.id}_audio`).onended = () => {
+    document.querySelector(`#${this.voiceLog.id}_audio`).addEventListener('ended', () => {
       this.isPlaying = false;
-    };
+    });
   }
 
   createSegment(): void {

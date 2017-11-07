@@ -36,3 +36,7 @@
   font-size: 12px;
 
 }
+
+.voice-waveform {
+  max-width: 600px;
+}
