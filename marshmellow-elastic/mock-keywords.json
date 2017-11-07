@@ -28,9 +28,469 @@
 { "index" : { "_index": "keywords", "_type" : "keyword"}}
 {"keyword": "profit", "count": 176}
 
-
 { "index" : { "_index": "keywords", "_type" : "keyword" }}
 {"keyword": "china", "count": 33}
 
 { "index" : { "_index": "keywords", "_type" : "keyword"}}
 {"keyword": "loss", "count": 11}
+
+{ "index" : { "_index": "keywords", "_type" : "keyword"}}
+{"keyword":"Preston","count": 23}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Ferguson","count": 38}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Anna","count": 16}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Jody","count": 21}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Tamera","count": 13}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Mooney","count": 21}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Combs","count": 25}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wolfe","count": 19}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Blackburn","count": 39}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Vega","count": 48}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Hancock","count": 35}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Barr","count": 46}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Cooper","count": 16}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Cathryn","count": 30}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Phyllis","count": 46}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Aguirre","count": 42}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Emilia","count": 39}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Howe","count": 31}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Barrera","count": 50}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Jocelyn","count": 20}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Vivian","count": 47}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Holman","count": 23}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Christine","count": 38}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Salinas","count": 43}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lancaster","count": 43}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Tricia","count": 31}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Gaines","count": 48}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Gallagher","count": 35}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Laura","count": 16}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Dotson","count": 25}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Rose","count": 13}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Foster","count": 16}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Freeman","count": 15}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Avery","count": 14}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Castillo","count": 43}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lourdes","count": 45}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Sallie","count": 28}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Sue","count": 29}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Chavez","count": 49}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Austin","count": 16}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lola","count": 12}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Kim","count": 22}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wilder","count": 40}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Jeanne","count": 19}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Jefferson","count": 42}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Conley","count": 27}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Hull","count": 41}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Potts","count": 21}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Potter","count": 31}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Terry","count": 48}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Newton","count": 39}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Nicholson","count": 49}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lillian","count": 37}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Bernice","count": 42}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Joyce","count": 38}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Tommie","count": 43}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Margie","count": 43}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Mosley","count": 33}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Adkins","count": 20}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Marva","count": 13}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Cherry","count": 19}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Cotton","count": 32}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Patrick","count": 11}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Blanca","count": 21}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Christi","count": 48}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Smith","count": 17}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Williams","count": 42}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Abbott","count": 27}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Araceli","count": 25}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Arlene","count": 24}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Leach","count": 22}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Villarreal","count": 17}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Sophie","count": 37}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Irma","count": 24}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Keisha","count": 36}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Dawson","count": 23}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Gregory","count": 37}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Hess","count": 43}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Hahn","count": 36}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Long","count": 27}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Hines","count": 44}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Reid","count": 45}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Kimberly","count": 39}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Bauer","count": 44}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Best","count": 44}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Rowe","count": 25}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Diana","count": 30}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Estelle","count": 10}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Angela","count": 44}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Tate","count": 14}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Henson","count": 50}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Jaclyn","count": 47}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Clarissa","count": 12}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Graham","count": 41}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Berry","count": 24}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Booth","count": 19}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Cortez","count": 34}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Letitia","count": 32}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Fowler","count": 36}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Madeline","count": 30}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lena","count": 37}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Boone","count": 17}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Kane","count": 12}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Downs","count": 37}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Bryant","count": 11}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Theresa","count": 22}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lela","count": 24}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Eloise","count": 50}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Keller","count": 34}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Weeks","count": 20}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Milagros","count": 36}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Oneill","count": 13}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Candy","count": 27}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Fleming","count": 50}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wendy","count": 48}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Janice","count": 17}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Myrtle","count": 41}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Ballard","count": 50}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Phoebe","count": 40}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Holder","count": 30}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Levine","count": 38}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Michael","count": 32}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Jodi","count": 30}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Reed","count": 12}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wynn","count": 31}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Douglas","count": 20}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Melendez","count": 14}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Quinn","count": 47}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Angelita","count": 25}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Palmer","count": 17}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Mendoza","count": 24}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Eleanor","count": 38}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Nannie","count": 45}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wilcox","count": 12}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lloyd","count": 31}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Chris","count": 30}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Keri","count": 46}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Barrett","count": 11}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lawanda","count": 13}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Stanley","count": 35}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lorrie","count": 31}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Mcdowell","count": 17}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Campos","count": 23}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Suzanne","count": 44}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Rosa","count": 12}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Lesa","count": 13}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Meredith","count": 22}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wood","count": 41}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Nunez","count": 14}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Bertie","count": 16}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Cooke","count": 47}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Delaney","count": 49}
+
+{"index" :{"_index":"keywords","_type" :"keyword"}}
+{"keyword":"Wagner","count": 25}
+
+  
