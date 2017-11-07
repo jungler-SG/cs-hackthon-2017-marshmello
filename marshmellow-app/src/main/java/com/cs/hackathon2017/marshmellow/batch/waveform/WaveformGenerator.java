@@ -47,8 +47,8 @@ public class WaveformGenerator {
                         inputVoiceFile.toString(),
                         "-o",
                         jsonOutputFile.toString(),
-                        "-z",
-                        "256",
+                        //"-z",
+                        //"256",
                         "-b",
                         "8"
                 };
