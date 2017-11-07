@@ -7,3 +7,10 @@ curl -XPOST https://search-cs-hackthon-marshmello-ptan2jgw3scrf54pmh5jhaps74.ap-
 
 
 scp -i /Users/zhangzhuzhefu/.ssh/zhefu_amazon_key1.pem /Users/zhangzhuzhefu/Development/repo/cs-hackthon-2017-marshmello/marshmellow-app/target/marshmellow-app-1.0-SNAPSHOT.jar   ubuntu@ec2-54-255-165-111.ap-southeast-1.compute.amazonaws.com:~/
+
+
+scp -i /Users/zhangzhuzhefu/.ssh/zhefu_amazon_key1.pem ubuntu@ec2-54-255-165-111.ap-southeast-1.compute.amazonaws.com:~/data/output/354dba95c9de4e1abff4e8018c394f5e.wav /Users/zhangzhuzhefu/Downloads/
+
+
+scp -i /Users/zhangzhuzhefu/.ssh/zhefu_amazon_key1.pem /Users/zhangzhuzhefu/Development/repo/speech-example-sphinx/woman1_nb.wav ubuntu@ec2-54-255-165-111.ap-southeast-1.compute.amazonaws.com:~/temp/
+
