@@ -4,3 +4,6 @@ curl -XPUT https://search-cs-hackthon-marshmello-ptan2jgw3scrf54pmh5jhaps74.ap-s
 
 
 curl -XPOST https://search-cs-hackthon-marshmello-ptan2jgw3scrf54pmh5jhaps74.ap-southeast-1.es.amazonaws.com/_bulk --data-binary @mock-keywords.json
+
+
+scp -i /Users/zhangzhuzhefu/.ssh/zhefu_amazon_key1.pem /Users/zhangzhuzhefu/Development/repo/cs-hackthon-2017-marshmello/marshmellow-app/target/marshmellow-app-1.0-SNAPSHOT.jar   ubuntu@ec2-54-255-165-111.ap-southeast-1.compute.amazonaws.com:~/
