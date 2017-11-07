@@ -112,7 +112,7 @@ public class SphinxSpeech2TextEngine implements Speech2TextEngine {
     }
 
     private Path output16kWavFile(Path inputVoiceFile) {
-        String outputFilename = FilenameUtils.removeExtension(inputVoiceFile.toString())
+        String outputFilename = FilenameUtils.removeExtension(inputVoiceFile.getFileName().toString())
                 + "_converted_16k.wav";
         return Paths.get(batchProperties.getVoiceLogTmp(), outputFilename);
     }
