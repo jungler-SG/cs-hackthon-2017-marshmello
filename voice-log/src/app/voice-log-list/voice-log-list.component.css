@@ -1,3 +1,10 @@
 .voice-log-list {
-    width: 100%;
+  width: 100%;
+}
+
+.error, .no-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 }
