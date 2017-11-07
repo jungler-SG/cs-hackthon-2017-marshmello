@@ -52,6 +52,17 @@ public class MarshMellowService {
 
     }
 
+    public void saveAudio() {
+
+        this.audioRepository.save(new ElasticAudio("4",
+                "y224480@rtcuat.credit-suisse.com--conference_2017-11-02_12-41.wav",
+                "2017-11-02 12:41:10",
+                "y2244880",
+                "20978910",
+                "this is a full audio text inserted by API",
+                new String[][]{new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"}}));
+    }
+
     private List<ElasticAudio> mockResult() {
         try {
             return Files.list(Paths.get(batchProperties.getVoiceLogOutput()))
@@ -71,7 +82,7 @@ public class MarshMellowService {
                 "RMID1",
                 "clientId1",
                 "this is full text of the speech from mock search",
-                Arrays.asList(new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"})
+                new String[][]{new String[]{"this", "10", "20"}, new String[]{"is", "25", "45"}}
         );
     }
 
