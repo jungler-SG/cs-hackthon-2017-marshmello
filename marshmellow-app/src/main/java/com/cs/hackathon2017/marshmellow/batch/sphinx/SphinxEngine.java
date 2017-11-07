@@ -7,6 +7,7 @@ import edu.cmu.sphinx.api.StreamSpeechRecognizer;
 import edu.cmu.sphinx.linguist.dictionary.Word;
 import edu.cmu.sphinx.result.WordResult;
 import edu.cmu.sphinx.util.TimeFrame;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
@@ -16,6 +17,7 @@ import java.nio.file.Path;
 import java.util.List;
 
 @Component
+@Slf4j
 public class SphinxEngine {
 
     private StreamSpeechRecognizer speechRecognizer;
@@ -37,15 +39,20 @@ public class SphinxEngine {
 
             SpeechResult result;
             StringBuilder fullText = new StringBuilder();
-            while ((result = speechRecognizer.getResult()) != null) {
-                List<WordResult> wordResultList = result.getWords();
-                for (WordResult wordResult : wordResultList) {
-                    Word word = wordResult.getWord();
-                    TimeFrame timeFrame = wordResult.getTimeFrame();
+            try {
+                while ((result = speechRecognizer.getResult()) != null) {
+                    List<WordResult> wordResultList = result.getWords();
+                    for (WordResult wordResult : wordResultList) {
+                        Word word = wordResult.getWord();
+                        TimeFrame timeFrame = wordResult.getTimeFrame();
 
-                    speech.addWord(word.getSpelling(), timeFrame.getStart(), timeFrame.getEnd());
-                    fullText.append(word.getSpelling()).append(" ");
+                        speech.addWord(word.getSpelling(), timeFrame.getStart(), timeFrame.getEnd());
+                        fullText.append(word.getSpelling()).append(" ");
+                    }
+                    log.info("Speech :{}", fullText);
                 }
+            } catch (Exception ex) {
+                log.error("ERROR while extracting speech, ignoring for now.", ex);
             }
             speechRecognizer.stopRecognition();
 
