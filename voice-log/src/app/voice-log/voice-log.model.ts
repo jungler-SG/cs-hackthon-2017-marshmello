@@ -34,11 +34,15 @@ export class VoiceLog {
 
   getFulltextHtmlWithHighlight(): string {
     let highlightFulltext = this.fullText || '';
+    highlightFulltext = highlightFulltext.replace(/</g, '');
+    highlightFulltext = highlightFulltext.replace(/>/g, '');
     this.keywords.forEach((keyword) => {
-      const rg = new RegExp(keyword, 'g');
-      highlightFulltext = highlightFulltext.replace(rg, `<span class="highlight">${keyword}</span>`);
+      if (keyword.trim().length > 0) {
+        const rg = new RegExp(keyword, 'g');
+        highlightFulltext = highlightFulltext.replace(rg, `<${keyword}>`);
+      }
     });
-    return highlightFulltext;
+    return highlightFulltext.replace(/<([\w@%&()_":\\'/.,]*)>/gi, '<span class="highlight">$1</span>');
   }
 
 }
