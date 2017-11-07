@@ -165,7 +165,7 @@ public class VoiceLogProcessor {
             try {
                 marshMellowService.saveAudio(
                         voiceFileId,
-                        voiceLog.getFileName().toString(),
+                        outputVoiceLogPath.getFileName().toString(),
                         speech,
                         "M123456",
                         "SG-12345",
