@@ -46,6 +46,11 @@ public class SphinxEngine {
                         Word word = wordResult.getWord();
                         TimeFrame timeFrame = wordResult.getTimeFrame();
 
+                        if ("<sil>".equalsIgnoreCase(word.getSpelling())
+                                || "sil".equalsIgnoreCase(word.getSpelling())) {
+                            continue;
+                        }
+
                         speech.addWord(word.getSpelling(), timeFrame.getStart(), timeFrame.getEnd());
                         fullText.append(word.getSpelling()).append(" ");
                     }
